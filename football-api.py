@@ -32,7 +32,7 @@ def get_predictions():
         "X-RapidAPI-Key": API_KEY,
     }
     params = {
-        "iso_date": "2025-02-20",
+        "iso_date": tomorrow.isoformat(),
         "federation": "UEFA",
         "market": "classic"
     }
