@@ -14,7 +14,7 @@ headers = {
 
 params = {
     "market": "classic",
-    "iso_date": "2025-08-06",
+    "iso_date": "2025-02-20",
     "federation": "UEFA"
 }
 
