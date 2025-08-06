@@ -10,3 +10,5 @@
 
 ---
 자동 업데이트 봇에 의해 관리됩니다.
+
+[![Update Football Predict README](https://github.com/DS0610/football-prediction-api/actions/workflows/football-predict.yml/badge.svg)](https://github.com/DS0610/football-prediction-api/actions/workflows/football-predict.yml)
