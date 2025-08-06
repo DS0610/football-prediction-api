@@ -10,6 +10,9 @@ headers = {
 # README 파일 경로
 README_PATH = "README.md"
 
+api_tz = pytz.timezone("Europe/London")
+local_tz = pytz.timezone("Asia/Seoul")
+
 def get_current_datetime_on_api_server():
     london_time = datetime.now(tz=timezone.utc).astimezone(api_tz)
     return london_time
