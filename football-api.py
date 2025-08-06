@@ -12,6 +12,12 @@ headers = {
     "X-RapidAPI-Key": API_KEY
 }
 
+params = {
+    "market": "classic",
+    "iso_date": "2025-08-06",
+    "federation": "UEFA"
+}
+
 # README 파일 경로
 README_PATH = "README.md"
 
