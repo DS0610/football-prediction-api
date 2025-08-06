@@ -8,15 +8,6 @@ import pytz
 API_KEY = os.getenv("FOOTBALLPREDICT_API_KEY")
 url = "https://football-prediction-api.p.rapidapi.com/api/v2/predictions?market=classic&iso_date=2025-08-06&federation=UEFA"
 
-headers = {
-    "X-RapidAPI-Key": API_KEY
-}
-
-params = {
-    "market": "classic",
-    "iso_date": "2025-02-20",
-    "federation": "UEFA"
-}
 
 # README 파일 경로
 README_PATH = "README.md"
@@ -41,7 +32,7 @@ def get_predictions():
         "X-RapidAPI-Key": API_KEY,
     }
     params = {
-        "iso_date": tomorrow.isoformat(),
+        "iso_date": "2025-02-20",
         "federation": "UEFA",
         "market": "classic"
     }
