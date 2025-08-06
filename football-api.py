@@ -32,7 +32,7 @@ def get_predictions():
 
     headers = {
         'User-Agent': 'python_requests',
-        "X-RapidAPI-Key": os.environ["RAPIDAPI_KEY"],
+        "X-RapidAPI-Key": os.environ["API_KEY"],
     }
     params = {
         "iso_date": tomorrow.isoformat(),
