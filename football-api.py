@@ -58,7 +58,7 @@ def write_readme(matches, date):
     readme_content += "|:-------------:|:-----:|:-------:|:-----:|:------------:|\n"
 
     if not matches:
-        readme_content += "| 데이터 없음 |  |  |  |  |\n"
+        readme_content += "| 경기 없음 | x | x | x | x |\n"
     else:
         for match in matches:
             local_start_time = to_local_datetime(match["start_date"]).strftime("%Y-%m-%d %H:%M")
