@@ -1,49 +1,36 @@
 # This is a basic workflow to help you get started with Actions
 
-name: football-predict
+name: Update Football Predict README
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  schedule:
-    - cron: "*/5 * * * *"
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"  # 매일 0시(UTC)에 실행
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:  
-  # This workflow contains a single job called "build"
-  update-readme:
-    # The type of runner that the job will run on
+jobs:
+  build:
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
-      # Runs a single command using the runners shell
-      - name: Setup Python
-        uses: actions/setup-python@v5.6.0
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-           python-version: 3.11
+          python-version: '3.10'    # 필요시 버전 지정
 
-      # Runs a set of commands using the runners shell
-      - name: pip 설치 
-        run: |
-          pip install python-dotenv requests
+      - name: Install dependencies
+        run: pip install requests pytz
 
-      - name: python 파일 실행 
-        run: |
-          python football-predict.py
+      - name: Run script
         env:
-          OPENWEATHER_API_KEY: ${{ secrets.FOOTBALLPREDICT_API_KEY }}
-          
-      - name: 변경내용 push 
+          FOOTBALLPREDICT_API_KEY: ${{ secrets.FOOTBALLPREDICT_API_KEY }}
+        run: python your_script.py
+
+      - name: Commit & Push changes
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add README.md
-          git commit -m "업데이트 완료" || echo "No change"
-          git push 
+          git commit -m "Auto-update football predict" || echo "No changes to commit"
+          git push
