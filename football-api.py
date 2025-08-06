@@ -6,7 +6,7 @@ import pytz
 
 # FOOTBALLPREDICT_API KEY
 API_KEY = os.getenv("FOOTBALLPREDICT_API_KEY")
-url = "https://football-prediction-api.p.rapidapi.com/api/v2/list-markets"
+url = "https://football-prediction-api.p.rapidapi.com/api/v2/predictions?market=classic&iso_date=2025-08-06&federation=UEFA"
 
 headers = {
     "X-RapidAPI-Key": API_KEY
